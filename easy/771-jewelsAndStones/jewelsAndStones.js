@@ -18,5 +18,15 @@ The characters in J are distinct.
 */
 
 var numJewelsInStones = function (J, S) {
+  let counter = 0;
 
+  for (let i = 0; i < J.length; i += 1) {
+    for (let j = 0; j < S.length; j += 1) {
+      if (J[i] === S[j]) {
+        counter += 1;
+      }
+    }
+  }
+
+  return counter;
 };
