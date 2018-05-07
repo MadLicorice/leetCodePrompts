@@ -34,15 +34,18 @@ var uniqueMorseRepresentations = function (words) {
   }
   let morseWords = [];
   let tempWord = '';
-  let uniqueCounter = 0;
 
   for (let i = 0; i < words.length; i += 1) {
     tempWord = '';
     for (let j = 0; j < words[i].length; j += 1) {
       tempWord += morseLetters[words[i][j]];
     }
-    morseWords.push(tempWord);
+    if (morseWords.indexOf(tempWord) === -1) {
+      morseWords.push(tempWord);
+    }
   }
 
-  return uniqueCounter;
+  return morseWords.length;
 };
+
+// console.log(uniqueMorseRepresentations(["gin", "zen", "gig", "msg"]));
