@@ -37,9 +37,11 @@ var uniqueMorseRepresentations = function (words) {
   let uniqueCounter = 0;
 
   for (let i = 0; i < words.length; i += 1) {
+    tempWord = '';
     for (let j = 0; j < words[i].length; j += 1) {
-
+      tempWord += morseLetters[words[i][j]];
     }
+    morseWords.push(tempWord);
   }
 
   return uniqueCounter;
