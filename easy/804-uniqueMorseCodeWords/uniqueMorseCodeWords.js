@@ -29,5 +29,18 @@ Each words[i] will have length in range[1, 12].
 */
 
 var uniqueMorseRepresentations = function (words) {
+  const morseLetters = {
+    a: ".-", b: "-...", c: "-.-.", d: "-..", e: ".", f: "..-.", g: "--.", h: "....", i: "..", j: ".---", k: "-.-", l: ".-..", m: "--", n: "-.", o: "---", p: ".--.", q: "--.-", r: ".-.", s: "...", t: "-", u: "..-", v: "...-", w: ".--", x: "-..-", y: "-.--", z: "--.."
+  }
+  let morseWords = [];
+  let tempWord = '';
+  let uniqueCounter = 0;
 
+  for (let i = 0; i < words.length; i += 1) {
+    for (let j = 0; j < words[i].length; j += 1) {
+
+    }
+  }
+
+  return uniqueCounter;
 };
