@@ -32,7 +32,8 @@ var uniqueMorseRepresentations = function (words) {
   const morseLetters = {
     a: ".-", b: "-...", c: "-.-.", d: "-..", e: ".", f: "..-.", g: "--.", h: "....", i: "..", j: ".---", k: "-.-", l: ".-..", m: "--", n: "-.", o: "---", p: ".--.", q: "--.-", r: ".-.", s: "...", t: "-", u: "..-", v: "...-", w: ".--", x: "-..-", y: "-.--", z: "--.."
   }
-  let morseWords = [];
+  let morseWords = {};
+  let uniqueCounter = 0;
   let tempWord = '';
 
   for (let i = 0; i < words.length; i += 1) {
@@ -40,12 +41,13 @@ var uniqueMorseRepresentations = function (words) {
     for (let j = 0; j < words[i].length; j += 1) {
       tempWord += morseLetters[words[i][j]];
     }
-    if (morseWords.indexOf(tempWord) === -1) {
-      morseWords.push(tempWord);
+    if (morseWords[tempWord] === undefined) {
+      uniqueCounter += 1;
+      morseWords[tempWord] = tempWord;
     }
   }
 
-  return morseWords.length;
+  return uniqueCounter;
 };
 
 // console.log(uniqueMorseRepresentations(["gin", "zen", "gig", "msg"]));
