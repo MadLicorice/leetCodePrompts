@@ -18,11 +18,14 @@ Could you do it without any loop / recursion in O(1) runtime ?
 */
 var addDigits = function (num) {
   let numStr = num.valueOf().toString();
-
+  let tempSum, i;
+  
   while (numStr.length > 1) {
-    // loop over string
-      // sum up all the numbers
-    // set numStr equal to the new sum in string form
+    tempSum = 0;
+    for (i = 0; i < numStr.length; i += 1) {
+      tempSum += Number(numStr[i]);
+    }
+    numStr = tempSum.toString();
   }
 
   return Number(numStr);
