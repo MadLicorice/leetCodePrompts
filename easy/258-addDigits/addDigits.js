@@ -16,6 +16,7 @@ Could you do it without any loop / recursion in O(1) runtime ?
 * @param {number} num
 * @return {number}
 */
+
 var addDigits = function (num) {
   let numStr = num.valueOf().toString();
   let tempSum, i;
