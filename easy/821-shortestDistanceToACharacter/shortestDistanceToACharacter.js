@@ -23,6 +23,21 @@ var shortestToChar = function (S, C) {
   }
   
   for (i = 0; i < S.length; i += 1) {
-    
+    if (currentIndexOfC === i) {
+      result.push(0);
+      currentIndexOfC += 1;
+    } else {
+      let firstDiff = currentIndexOfC - i;
+      let secondDiff = currentIndexOfC - (i + 1);
+      if (firstDiff < 0) {
+        firstDiff *= -1;
+      }
+      if (firstDiff > secondDiff) {
+        result.push(firstDiff);
+      } else {
+        result.push(secondDiff);
+        currentIndexOfC += 1;
+      }
+    }
   }
 };
