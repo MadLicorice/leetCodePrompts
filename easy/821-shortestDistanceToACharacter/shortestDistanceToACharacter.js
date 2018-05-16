@@ -12,14 +12,14 @@ All letters in S and C are lowercase.
 
 var shortestToChar = function (S, C) {
   let result = [];
-  let locationsOfC = {};
+  let locationsOfC = [];
   
   for (let i = 0; i < S.length; i += 1) {
     if (S[i] === C) {
-      locationsOfC[i] = i;
-      
+      locationsOfC.push(i)
     }
   }
+  
   for (let j = i; j < S.length; j += 1) {
     
   }
