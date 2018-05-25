@@ -18,5 +18,7 @@ Output:
  * @return {number[]}
  */
 var findDisappearedNumbers = function (nums) {
+  const result = [];
 
+  return result;
 };
