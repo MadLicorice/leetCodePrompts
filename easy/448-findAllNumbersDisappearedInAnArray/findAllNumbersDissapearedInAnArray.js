@@ -19,6 +19,7 @@ Output:
  */
 var findDisappearedNumbers = function (nums) {
   const result = [];
+  let set = {};
 
   return result;
 };
