@@ -53,6 +53,14 @@ var calPoints = function (ops) {
         for (j = i; j >= 0; j -= 1) {
           
         }
+      } else if (ops[i] === 'D') {
+        for (j = i; j >= 0; j -= 1) {
+
+        }
+      } else if (ops[i] === '+') {
+        for (j = i; j >= 0; j -= 1) {
+
+        }
       }
     }
   }
