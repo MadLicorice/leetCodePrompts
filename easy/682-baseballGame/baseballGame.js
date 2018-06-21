@@ -47,20 +47,18 @@ var calPoints = function (ops) {
 
   for (i = 0; i < ops.length; i += 1) {
     if (ops[i] !== 'C' && ops[i] !== 'D' && ops[i] !== '+') {
-      total += ops[i]
+      total += ops[i];
     } else {
       if (ops[i] === 'C') {
         for (j = i; j >= 0; j -= 1) {
           if (typeof ops[j] === 'number') {
-
+            total -= ops[j];
+            ops[j] = 'X'
+            break;
           }
         }
       } else if (ops[i] === 'D') {
-        for (j = i; j >= 0; j -= 1) {
-          if (typeof ops[j] === 'number') {
-
-          }
-        }
+        total += total * 2
       } else if (ops[i] === '+') {
         for (j = i; j >= 0; j -= 1) {
           if (typeof ops[j] === 'number') {
