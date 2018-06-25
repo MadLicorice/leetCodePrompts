@@ -53,12 +53,12 @@ var calPoints = function (ops) {
         for (j = i; j >= 0; j -= 1) {
           if (typeof ops[j] === 'number') {
             total -= ops[j];
-            ops[j] = 'X'
+            ops[j] = 'X';
             break;
           }
         }
       } else if (ops[i] === 'D') {
-        total += total * 2
+        total += total * 2;
       } else if (ops[i] === '+') {
         for (j = i; j >= 0; j -= 1) {
           if (typeof ops[j] === 'number') {
