@@ -63,6 +63,7 @@ var calPoints = function (ops) {
         for (j = i; j >= 0; j -= 1) {
           if (typeof ops[j] === 'number') {
             total += ops[j] + ops[j - 1];
+            break;
           }
         }
       }
