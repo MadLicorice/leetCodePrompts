@@ -43,7 +43,8 @@ Every integer represented in the list will be between - 30000 and 30000.
  */
 var calPoints = function (ops) {
   let total = 0;
-  let i, j;
+  let counter = 0;
+  let i, j, scoreMemo;
 
   for (i = 0; i < ops.length; i += 1) {
     if (ops[i] !== 'C' && ops[i] !== 'D' && ops[i] !== '+') {
@@ -61,9 +62,14 @@ var calPoints = function (ops) {
         total += total * 2;
       } else if (ops[i] === '+') {
         for (j = i; j >= 0; j -= 1) {
+          counter = 0;
           if (typeof ops[j] === 'number') {
-            total += ops[j] + ops[j - 1];
-            break;
+            counter += 1
+            scoreMemo = ops[j];
+            if (counter >= 2) {
+              total += ops[j] + scoreMemo;
+              break;
+            }
           }
         }
       }
