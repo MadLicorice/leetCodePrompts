@@ -41,19 +41,22 @@ Every integer represented in the list will be between - 30000 and 30000.
  * @param {string[]} ops
  * @return {number}
  */
+var input = ["5", "2", "C", "D", "+"];
+
 var calPoints = function (ops) {
   let total = 0;
   let counter = 0;
   let i, j, tempScore;
+  debugger;
 
   for (i = 0; i < ops.length; i += 1) {
     if (ops[i] !== 'C' && ops[i] !== 'D' && ops[i] !== '+') {
-      total += ops[i];
+      total += Number(ops[i]);
     } else {
       if (ops[i] === 'C') {
         for (j = i; j >= 0; j -= 1) {
-          if (typeof ops[j] === 'number') {
-            total -= ops[j];
+          if (ops[j] !== 'C' && ops[j] !== 'D' && ops[j] !== '+' && ops[j] !== 'X') {
+            total -= Number(ops[j]);
             ops[j] = 'X';
             break;
           }
@@ -63,11 +66,11 @@ var calPoints = function (ops) {
       } else if (ops[i] === '+') {
         for (j = i; j >= 0; j -= 1) {
           counter = 0;
-          if (typeof ops[j] === 'number') {
+          if (ops[j] !== 'C' && ops[j] !== 'D' && ops[j] !== '+' && ops[j] !== 'X') {
             counter += 1
-            tempScore = ops[j];
+            tempScore = Number(ops[j]);
             if (counter >= 2) {
-              total += ops[j] + tempScore;
+              total += Number(ops[j]) + tempScore;
               break;
             }
           }
@@ -75,4 +78,7 @@ var calPoints = function (ops) {
       }
     }
   }
+  return total;
 };
+
+calPoints(input);
