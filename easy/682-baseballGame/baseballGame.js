@@ -46,8 +46,12 @@ var input = ["5", "2", "C", "D", "+"];
 var calPoints = function (ops) {
   let total = 0;
   let counter = 0;
+<<<<<<< HEAD
   let i, j, tempScore;
   debugger;
+=======
+  let i, j, tempScore, temp;
+>>>>>>> 453337c485abb3b1d085b23fc94e7fc676505b1b
 
   for (i = 0; i < ops.length; i += 1) {
     if (ops[i] !== 'C' && ops[i] !== 'D' && ops[i] !== '+') {
