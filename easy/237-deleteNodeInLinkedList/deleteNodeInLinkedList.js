@@ -36,5 +36,15 @@ Do not return anything from your function.
  * @return {void} Do not return anything, modify node in-place instead.
  */
 var deleteNode = function (node) {
+  let flag = true;
 
+  while (flag) {
+    if (this.next.val === node) {
+      let newNext = this.next.next;
+      this.next = newNext;
+      flag = false;
+    }
+  }
+
+  return undefined;
 };
