@@ -43,6 +43,8 @@ var deleteNode = function (node) {
       let newNext = this.next.next;
       this.next = newNext;
       flag = false;
+    } else {
+      this.next = this.next.next;
     }
   }
 
