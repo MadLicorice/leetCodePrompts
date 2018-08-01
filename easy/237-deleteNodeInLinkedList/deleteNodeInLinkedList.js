@@ -47,6 +47,4 @@ var deleteNode = function (node) {
       this.next = this.next.next;
     }
   }
-
-  return undefined;
 };
