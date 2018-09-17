@@ -38,7 +38,7 @@ Do not return anything from your function.
 var deleteNode = function (node) {
   let flag = true;
 
-  while (flag) {
+  while (flag || this.val === undefined) {
     if (this.next.val === node) {
       let newNext = this.next.next;
       this.next = newNext;
